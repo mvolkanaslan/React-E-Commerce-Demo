@@ -11,7 +11,7 @@ export default class ProductList extends Component {
         return (
             <>
                 <ListGroup>
-                    <ListGroup.Item className='mb-2 bg-dark text-white'>{this.props.currentCategory.categoryName?this.props.currentCategory.categoryName:"All Products"}</ListGroup.Item>
+                    <ListGroup.Item className='mb-2 bg-dark text-white'>Category : {this.props.currentCategory.categoryName?this.props.currentCategory.categoryName:"All Products"}</ListGroup.Item>
                 </ListGroup>
                 <Table striped bordered hover>
                     <thead>

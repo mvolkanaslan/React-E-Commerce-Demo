@@ -18,9 +18,10 @@ export default class Categories extends Component {
     render() {
         return (
             <ListGroup>
+            <ListGroup.Item  className="bg-dark text-white">Category List</ListGroup.Item>
                 {
                     this.state.categories.map(category => {
-                        return <ListGroup.Item action variant="success" key={category.id} onClick={() => this.props.setCurrentCategory(category)}>{category.categoryName}</ListGroup.Item>
+                        return <ListGroup.Item action  key={category.id} onClick={() => this.props.setCurrentCategory(category)}>{category.categoryName}</ListGroup.Item>
                     })
                 }
             </ListGroup>

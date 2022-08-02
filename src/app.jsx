@@ -31,11 +31,14 @@ class App extends React.Component {
         let addedProduct = this.state.cart.find(item=>item.product.id===product.id);
         addedProduct ? addedProduct.quantity++ : this.setState({cart:[...this.state.cart,{product:product,quantity:1}]})
     }
+    removeFromCart = (product)=>{
+        this.setState({cart:this.state.cart.filter(item=>item.product.id!==product.id)})
+    }
 
     render() {
         return (
             <Container>
-                <Navi cart={this.state.cart} />
+                <Navi removeFromCart={this.removeFromCart} cart={this.state.cart} />
                 <Row>
                     <Col lg={3}>
                         <Categories setCurrentCategory={this.setCurrentCategory} />

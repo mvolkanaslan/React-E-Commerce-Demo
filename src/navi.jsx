@@ -14,7 +14,7 @@ export default class Navi extends Component {
                         <Navbar.Brand href="#home">
                             Product Management
                         </Navbar.Brand>
-                        {this.props.cart.length>0 && <CartSummary cart={this.props.cart}/>}
+                        {this.props.cart.length>0 && <CartSummary removeFromCart={this.props.removeFromCart} cart={this.props.cart}/>}
                     </Container>
                 </Navbar>
             </>
