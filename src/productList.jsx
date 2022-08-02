@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { ListGroup, Stack, Table } from 'react-bootstrap'
+import { Button, ListGroup, Stack, Table } from 'react-bootstrap'
 
 
 export default class ProductList extends Component {
@@ -18,10 +18,11 @@ export default class ProductList extends Component {
                         <tr>
                             <th>id</th>
                             <th>Product Name</th>
-                            <th>Category Id</th>
+                            {/* <th>Category Id</th> */}
                             <th>Quantity Per Unit</th>
                             <th>Unit Price</th>
                             <th>Units In Stock</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -30,11 +31,12 @@ export default class ProductList extends Component {
                                 return (
                                     <tr key={product.id}>
                                         <td>{product.id}</td>
-                                        <td>{product.product}</td>
-                                        <td>{product.categoryId}</td>
+                                        <td>{product.productName}</td>
+                                        {/* <td>{product.categoryId}</td> */}
                                         <td>{product.quantityPerUnit}</td>
-                                        <td>{product.unitPrice}</td>
-                                        <td>{product.unitsInStock}</td>
+                                        <td align='center'>€ {product.unitPrice}</td>
+                                        <td align='center'>{product.unitsInStock}</td>
+                                        <td align='center'><Button onClick={()=>this.props.addToCart(product)} size='sm' variant='primary'>Add</Button></td>
                                     </tr>
                                 )
                             })
