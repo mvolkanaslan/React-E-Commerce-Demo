@@ -1,14 +1,18 @@
+
 import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap';
+import { toast } from 'react-toastify';
 import Categories from './Categories'
 import Navi from './Navi';
 import ProductList from './ProductList';
+import ToastConfig from './toast-config';
+
 
 class App extends React.Component {
     state = {
         currentCategory: {},
         products: [],
-        cart:[]
+        cart: []
     }
 
     setCurrentCategory = (curCategory) => {
@@ -27,12 +31,14 @@ class App extends React.Component {
             .then(response => response.json())
             .then(data => this.setState({ products: data }))
     }
-    addToCart=(product)=>{
-        let addedProduct = this.state.cart.find(item=>item.product.id===product.id);
-        addedProduct ? addedProduct.quantity++ : this.setState({cart:[...this.state.cart,{product:product,quantity:1}]})
+    addToCart = (product) => {
+        let addedProduct = this.state.cart.find(item => item.product.id === product.id);
+        addedProduct ? addedProduct.quantity++ : this.setState({ cart: [...this.state.cart, { product: product, quantity: 1 }] });
+        toast.success(`"${product.productName}" added to Cart`,ToastConfig);
     }
-    removeFromCart = (product)=>{
-        this.setState({cart:this.state.cart.filter(item=>item.product.id!==product.id)})
+    removeFromCart = (product) => {
+        this.setState({ cart: this.state.cart.filter(item => item.product.id !== product.id) })
+        toast.warning(`"${product.productName}" deleted from the Cart`,ToastConfig);
     }
 
     render() {

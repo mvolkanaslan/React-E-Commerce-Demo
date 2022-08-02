@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, ListGroup, Stack, Table } from 'react-bootstrap'
+import { Button, ListGroup, Table } from 'react-bootstrap'
 
 
 export default class ProductList extends Component {
@@ -11,7 +11,7 @@ export default class ProductList extends Component {
         return (
             <>
                 <ListGroup>
-                    <ListGroup.Item className='mb-2 bg-dark text-white'>Category : {this.props.currentCategory.categoryName?this.props.currentCategory.categoryName:"All Products"}</ListGroup.Item>
+                    <ListGroup.Item className='mb-2 bg-dark text-white'>Category : {this.props.currentCategory.categoryName ? this.props.currentCategory.categoryName : "All Products"}</ListGroup.Item>
                 </ListGroup>
                 <Table striped bordered hover>
                     <thead>
@@ -29,6 +29,7 @@ export default class ProductList extends Component {
                         {
                             this.props.products.map(product => {
                                 return (
+
                                     <tr key={product.id}>
                                         <td>{product.id}</td>
                                         <td>{product.productName}</td>
@@ -36,7 +37,7 @@ export default class ProductList extends Component {
                                         <td>{product.quantityPerUnit}</td>
                                         <td align='center'>€ {product.unitPrice}</td>
                                         <td align='center'>{product.unitsInStock}</td>
-                                        <td align='center'><Button onClick={()=>this.props.addToCart(product)} size='sm' variant='primary'>Add</Button></td>
+                                        <td align='center'><Button onClick={() => this.props.addToCart(product)} size='sm' variant='primary'>Add</Button></td>
                                     </tr>
                                 )
                             })
