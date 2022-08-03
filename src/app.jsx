@@ -32,8 +32,9 @@ class App extends React.Component {
             .then(data => this.setState({ products: data }))
     }
     addToCart = (product) => {
-        let addedProduct = this.state.cart.find(item => item.product.id === product.id);
-        addedProduct ? addedProduct.quantity++ : this.setState({ cart: [...this.state.cart, { product: product, quantity: 1 }] });
+        let currentCart = this.state.cart;
+        let addedProduct = currentCart.find(item => item.product.id === product.id);
+        addedProduct ? (()=>{addedProduct.quantity++;this.setState(currentCart)})() : this.setState({ cart: [...this.state.cart, { product: product, quantity: 1 }] });
         toast.success(`"${product.productName}" added to Cart`,ToastConfig);
     }
     removeFromCart = (product) => {
