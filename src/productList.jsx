@@ -3,9 +3,8 @@ import { Button, ListGroup, Table } from 'react-bootstrap'
 
 
 export default class ProductList extends Component {
-    state = {
-        products: []
-    }
+    
+
 
     render() {
         return (
@@ -37,7 +36,7 @@ export default class ProductList extends Component {
                                         <td>{product.quantityPerUnit}</td>
                                         <td align='center'>€ {product.unitPrice}</td>
                                         <td align='center'>{product.unitsInStock}</td>
-                                        <td align='center'><Button onClick={() => this.props.addToCart(product)} size='sm' variant='primary'>Add</Button></td>
+                                        <td align='center'><Button disabled={product.unitsInStock>0?false:true} onClick={() => this.props.addToCart(product)} size='sm' variant='primary'>Add</Button></td>
                                     </tr>
                                 )
                             })

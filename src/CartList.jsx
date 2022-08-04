@@ -1,9 +1,45 @@
 import React, { Component } from 'react'
+import { Button, ListGroup, Table } from 'react-bootstrap'
 
 export default class CartList extends Component {
+  
   render() {
+    const {cart,removeFromCart} = this.props;
     return (
-      <div>CartList</div>
+      <>
+                <ListGroup>
+                    <ListGroup.Item className='mb-2 bg-dark text-white'>Your Cart</ListGroup.Item>
+                </ListGroup>
+                <Table striped bordered hover>
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>Product Name</th>
+                            <th>Unit Price</th>
+                            <th>Quantity</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                             cart.map(item => {
+                                return (
+                                    <tr key={item.product.id}>
+                                        <td>{item.product.id}</td>
+                                        <td>{item.product.productName}</td>
+                                        <td align='center'>€ {item.product.unitPrice}</td>
+                                        <td>{item.quantity}</td>
+                                        <td align='center'><Button onClick={() => removeFromCart(item.product)} size='sm' variant='primary'>Remove</Button></td>
+                                    </tr>
+                                )
+                            })
+                            
+                        }
+                    </tbody>
+
+                </Table>
+
+            </>
     )
   }
 }
