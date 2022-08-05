@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Button, ListGroup, Table } from 'react-bootstrap'
 import { Link } from 'react-router-dom';
+import Icon from './Icon';
 
 export default class CartList extends Component {
   
@@ -30,7 +31,8 @@ export default class CartList extends Component {
                                         <td><Link to={`/product/${item.product.id}`}  style={{textDecoration:"none",color:"black"}}>{item.product.productName}</Link></td>
                                         <td align='center'>€ {item.product.unitPrice}</td>
                                         <td>{item.quantity}</td>
-                                        <td align='center'><Button onClick={() => removeFromCart(item.product)} size='sm' variant='primary'>Remove</Button></td>
+                                        <td align='center'><i style={{cursor:"pointer"}} onClick={() => removeFromCart(item.product)}><Icon fill={"red"} name={"trash"} size={20} /></i></td>
+                                        {/* <td align='center'><Button onClick={() => removeFromCart(item.product)} size='sm' variant='primary'>Remove</Button></td> */}
                                     </tr>
                                 )
                             })

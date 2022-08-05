@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import { Button, ListGroup, Table } from 'react-bootstrap'
+import {  ListGroup, Table } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import Icon from './Icon'
 
 
 export default class ProductList extends Component {
-    comp
     render() {
         return (
             <>
@@ -34,7 +34,7 @@ export default class ProductList extends Component {
                                         <td>{product.quantityPerUnit}</td>
                                         <td align='center'>€ {product.unitPrice}</td>
                                         <td align='center'>{product.unitsInStock}</td>
-                                        <td align='center'><Button disabled={product.unitsInStock>0?false:true} onClick={() => this.props.addToCart(product)} size='sm' variant='primary'>Add</Button></td>
+                                        <td align='center'><Icon  fill={"green"} name="addtocart" size={30} onClick={()=>this.props.addToCart (product)}/></td>
                                     </tr>
                                 )
                             })

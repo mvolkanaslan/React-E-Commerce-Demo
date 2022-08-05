@@ -20,7 +20,7 @@ function ProductDetails(props) {
                     <div className="card-body">
                         <div className='d-flex justify-content-between'>
                         <h4 className="card-title text-uppercase">{product.productName}</h4>
-                        <i style={{cursor:"pointer"}} onClick={()=>props.addToCart (product)} ><Icon stroke={"black"} fill={"green"} name="addtocart" size={30}/></i>
+                        <Icon  fill={"green"} name="addtocart" size={30} onClick={()=>props.addToCart (product)}/>
                         </div>
                         <p className="card-text ">{product.description}</p>
                         <hr />

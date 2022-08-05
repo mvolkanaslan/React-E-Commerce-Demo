@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import { Row, Col } from 'react-bootstrap';
-import ProductList from './ProductList';
 import Categories from './Categories'
-import { Routes, Route, Outlet } from "react-router-dom"
+import {  Outlet } from "react-router-dom"
 
 
 export default class ContentLayout extends Component {
