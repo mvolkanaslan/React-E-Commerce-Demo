@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
 import { Button, ListGroup, Table } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 
 export default class ProductList extends Component {
-    
-
-
+    comp
     render() {
         return (
             <>
@@ -31,8 +30,7 @@ export default class ProductList extends Component {
 
                                     <tr key={product.id}>
                                         <td>{product.id}</td>
-                                        <td>{product.productName}</td>
-                                        {/* <td>{product.categoryId}</td> */}
+                                        <td><Link to={`/product/${product.id}`}  style={{textDecoration:"none"}}>{product.productName}</Link></td>
                                         <td>{product.quantityPerUnit}</td>
                                         <td align='center'>€ {product.unitPrice}</td>
                                         <td align='center'>{product.unitsInStock}</td>

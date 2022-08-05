@@ -9,6 +9,8 @@ import ContentLayout from './ContentLayout';
 import ProductList from './ProductList';
 import NotFound from './NotFound';
 import CartList from './CartList';
+import ProductDetails from './ProductDetails';
+import ProductContext from './product-services/product-context';
 
 
 class App extends React.Component {
@@ -29,10 +31,8 @@ class App extends React.Component {
         this.getProducts()
     }
 
-    getProducts(query = "") {
-        fetch("http://localhost:3000/products" + query)
-            .then(response => response.json())
-            .then(data => this.setState({ products: data }))
+    getProducts() {
+        ProductContext.getProducts().then(data=>this.setState({ products: data }))
     }
     addToCart = (product) => {
         let currentCart = this.state.cart;
@@ -56,7 +56,7 @@ class App extends React.Component {
                         <Route  path="cart" element={this.state.cart.length===0 ? <Navigate to="/"/> : <CartList cart={this.state.cart} removeFromCart={this.removeFromCart}/>} />
                     </Route>
                     <Route path='*' element={<NotFound />}/>
-                    
+                    <Route path='/product/:id' element={<ProductDetails/>}/>
                 </Routes>
             </Container>
         )

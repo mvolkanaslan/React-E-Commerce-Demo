@@ -9,7 +9,6 @@ export default class Navi extends Component {
     render() {
         return (
             <>
-
                 <Navbar className="mb-3" bg="dark" variant="dark">
                     <Container>
                         <Link style={{textDecoration: "none"}} to="/"><Navbar.Brand>

@@ -15,9 +15,8 @@ export default class CartSummary extends React.Component {
                         </Stack>
                     </NavDropdown.Item>
                 })}
-                <NavDropdown.Divider />
-                
-                <Link to="/cart" style={{ textDecoration: "none" }} className="dropdown-item">Go To Cart</Link>
+                <NavDropdown.Divider />                
+                <NavDropdown.Item><Link to="/cart" style={{ textDecoration: "none" }} className="dropdown-item">Go To Cart</Link></NavDropdown.Item>
             </NavDropdown>)
     }
 }
