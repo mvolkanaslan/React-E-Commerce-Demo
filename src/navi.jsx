@@ -12,7 +12,7 @@ export default class Navi extends Component {
                 <Navbar className="mb-3" bg="dark" variant="dark">
                     <Container>
                         <Link style={{textDecoration: "none"}} to="/"><Navbar.Brand>
-                            Product Management
+                            E-Commerce
                         </Navbar.Brand></Link>
                         {this.props.cart.length>0 && <CartSummary removeFromCart={this.props.removeFromCart} cart={this.props.cart}/>}
                     </Container>
