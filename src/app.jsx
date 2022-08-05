@@ -56,7 +56,7 @@ class App extends React.Component {
                         <Route  path="cart" element={this.state.cart.length===0 ? <Navigate to="/"/> : <CartList cart={this.state.cart} removeFromCart={this.removeFromCart}/>} />
                     </Route>
                     <Route path='*' element={<NotFound />}/>
-                    <Route path='/product/:id' element={<ProductDetails/>}/>
+                    <Route path='/product/:id' element={<ProductDetails addToCart={this.addToCart}/>}/>
                 </Routes>
             </Container>
         )

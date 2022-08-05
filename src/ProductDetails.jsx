@@ -38,6 +38,9 @@ function ProductDetails(props) {
                             </tbody>
                         </table>
                     </div>
+                    <div className='d-flex justify-content-end m-3'>
+                        <input type="button" className='btn btn-success btn-sm' onClick={()=>props.addToCart(product)} value="Add To Card"/>
+                    </div>
                 </div>
             </div>
         </div>
