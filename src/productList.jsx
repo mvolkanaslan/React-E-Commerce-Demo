@@ -30,7 +30,7 @@ export default class ProductList extends Component {
 
                                     <tr key={product.id}>
                                         <td>{product.id}</td>
-                                        <td><Link to={`/product/${product.id}`}  style={{textDecoration:"none"}}>{product.productName}</Link></td>
+                                        <td><Link to={`/product/${product.id}`}  style={{textDecoration:"none", color:"black"}}>{product.productName}</Link></td>
                                         <td>{product.quantityPerUnit}</td>
                                         <td align='center'>€ {product.unitPrice}</td>
                                         <td align='center'>{product.unitsInStock}</td>

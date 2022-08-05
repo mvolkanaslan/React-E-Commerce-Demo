@@ -27,7 +27,7 @@ export default class CartList extends Component {
                                 return (
                                     <tr key={item.product.id}>
                                         <td>{item.product.id}</td>
-                                        <td><Link to={`/product/${item.product.id}`}  style={{textDecoration:"none"}}>{item.product.productName}</Link></td>
+                                        <td><Link to={`/product/${item.product.id}`}  style={{textDecoration:"none",color:"black"}}>{item.product.productName}</Link></td>
                                         <td align='center'>€ {item.product.unitPrice}</td>
                                         <td>{item.quantity}</td>
                                         <td align='center'><Button onClick={() => removeFromCart(item.product)} size='sm' variant='primary'>Remove</Button></td>
