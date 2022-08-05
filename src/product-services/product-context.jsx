@@ -1,8 +1,8 @@
 export default class ProductContext{ 
     
     static url = "http://localhost:3000/products"
-     static getProducts = async () =>{
-       return await fetch(this.url)
+     static getProducts = async (query="") =>{
+       return await fetch(`${this.url+query}`)
        .then(response => response.json())
        .then(data=>data)
     }

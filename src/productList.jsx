@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom'
 import Icon from './Icon'
 
 
+
 export default class ProductList extends Component {
+    
     render() {
         return (
             <>
@@ -16,7 +18,6 @@ export default class ProductList extends Component {
                         <tr>
                             <th>id</th>
                             <th>Product Name</th>
-                            {/* <th>Category Id</th> */}
                             <th>Quantity Per Unit</th>
                             <th>Unit Price</th>
                             <th>Units In Stock</th>

@@ -31,8 +31,8 @@ class App extends React.Component {
         this.getProducts()
     }
 
-    getProducts() {
-        ProductContext.getProducts().then(data=>this.setState({ products: data }))
+    getProducts(query="") {
+        ProductContext.getProducts(query).then(data=>this.setState({ products: data }))
     }
     addToCart = (product) => {
         let currentCart = this.state.cart;
